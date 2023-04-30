@@ -1,0 +1,55 @@
+/* 
+// Metacrafters - Beginning Javascript
+//
+// This is a javascript playground for testing your javascript code!
+// When you are ready to test, simply right click and select "Run Code"
+// to see the result print below. If you have more then one snippet of code,
+// you can highlight the code you want to test, and then right click and select "Run Code"
+*/
+
+// Enter your code below this line
+
+// Code example
+for(var i=1; i<=5; i++) {
+ console.log(i);
+}let numberOfNFTs = 0;
+let nft = [];
+
+function mintNFT(Keyboard, Kind, Size, Brand) {
+    let nftObject = {
+        Keyboard: Keyboard,
+        Kind: Kind,
+        Size: Size,
+        Brand: Brand
+    };
+
+    nft.push(nftObject);
+    numberOfNFTs++;
+    return nftObject;
+
+}
+
+function listNFTs() {
+    for (let i = 0; i < numberOfNFTs; i++) {
+        console.log("Keyboard: " + nft[i].Keyboard);
+        console.log("Kind: " + nft[i].Kind);
+        console.log("Size: " + nft[i].Size);
+        console.log("Brand: " + nft[i].Brand);
+        console.log();
+    }
+}
+
+function getTotalSupply() {
+    return numberOfNFTs;
+}
+
+console.log("My Top 5 Mechanical Keyboards")
+console.log();
+let nft1 = mintNFT("Cyberboard", "Keyboard Enthusiast", "75%", "Angrymiao");
+let nft2 = mintNFT("Alice QMK", "Ergonomic", "65%", "Epomaker");
+let nft3 = mintNFT("GMK67", "Budget Keyboard", "65%", "Zouya");
+let nft4 = mintNFT("Apec Pro", "Gaming Keyboard", "60%", "Steel Series");
+let nft5 = mintNFT("AM Hatsu", "Split Ergonomic", "50%", "Angrymiao");
+
+listNFTs();
+console.log("Total number of NFTs: " + getTotalSupply());
